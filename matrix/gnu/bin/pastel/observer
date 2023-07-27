@@ -1,0 +1,27 @@
+#!/usr/bin/gdb
+
+set observer on
+show observer
+set may-write-register on
+show may-write-registers
+set may-write-memory on
+show may-write-memory
+set may-insert-breakpoints on
+show may-insert-breakpoints
+
+set may-insert-fast-tracepoints on
+set may-interrupt on
+show may-interrupt
+p $_gdb_setting_str("height")
+p $_gdb_setting("height")
+p $_gdb_setting_str("history size")
+p $_gdb_setting_str("disassemble-next-line")
+p $_gdb_setting("disassemble-next-line")
+p $_gdb_maint_setting("show")
+p $_memeq(port, address, 2)
+p $_memeq(vi, address, 22)
+p $_regex("d", regex)
+p $_streq("vi", "hack")
+p $_strlen("vi hack")
+p $_caller_is(name="port address")
+show language "auto; currently c"

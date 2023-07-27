@@ -1,0 +1,14 @@
+#!/usr/bin/gdb
+
+set print raw-values
+set print vtbl
+
+print $_caller_is("top_func", 2)
+info source
+set extension-language '*.py'
+info extensions
+p $_gdb_maint_setting("show")
+backtrace
+memory-tag with-logical-tag pointer_expression
+display expr
+frame 3 4

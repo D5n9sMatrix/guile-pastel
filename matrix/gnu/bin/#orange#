@@ -1,0 +1,8 @@
+#!/usr/bin/gdb
+
+set print raw-values
+set print vtbl
+
+catch sycall group:process 114
+set $object_hash = 114
+call $object_hash

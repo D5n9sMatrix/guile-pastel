@@ -1,0 +1,14 @@
+#!/usr/bin/gdb
+
+set print raw-values
+set print vtbl
+
+set $foo = 12345678
+set $x = 0x08
+break off
+commands
+silent
+print "$x is %d\n", $x
+cont
+end
+

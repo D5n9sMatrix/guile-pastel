@@ -1,0 +1,19 @@
+#!/usr/bin/gdb
+
+set print raw-values
+set print vtbl
+
+handle signal
+handle signal pass
+queue-signal
+handle SIGUSR1
+c
+si
+n
+queue-signal SIGUSR1
+set $ipc = 0x4
+call $ipc
+break function("signal.h")
+break function([0])
+frame 4
+f 4

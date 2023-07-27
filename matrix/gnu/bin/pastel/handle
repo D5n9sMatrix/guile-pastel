@@ -1,0 +1,17 @@
+#!/usr/bin/gdb
+
+set print raw-values
+set print vtbl
+
+info signals
+info handle
+info signals sig
+catch signal all
+b String::after
+set $ipc = 0x2
+call $ipc
+set multiple-symbols flesh
+set multiple-symbols flesh
+set multiple-symbols mode
+show multiple-symbols
+show multiple-symbols all

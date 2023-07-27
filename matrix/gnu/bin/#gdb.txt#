@@ -1,0 +1,9 @@
+#!/usr/bin/gdb
+
+set print raw-values
+set print vtbl
+
+set logging on
+sharedlibrary
+r call
+c done

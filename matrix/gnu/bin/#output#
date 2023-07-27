@@ -1,0 +1,20 @@
+#!/usr/bin/gdb
+
+set print raw-values
+set print vtbl
+
+show backtrace past-entry
+set filename-display
+set filename-display relative
+set filename-display basename
+show filename-display basename
+frame 4
+f 4
+frame 3
+frame level 3
+info frame
+set logging on
+apropos -v
+sharedlibrary
+r call
+c done

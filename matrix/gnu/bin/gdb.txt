@@ -1,0 +1,940 @@
+&"REGEXP string is empty\n"
+^error,msg="REGEXP string is empty"
+(gdb) 
+85^error,msg="No registers."
+(gdb) 
+86^done,threads=[]
+(gdb) 
+87^done,BreakpointTable={nr_rows="0",nr_cols="6",hdr=[{width="7",alignment="-1",col_name="number",colhdr="Num"},{width="14",alignment="-1",col_name="type",colhdr="Type"},{width="4",alignment="-1",col_name="disp",colhdr="Disp"},{width="3",alignment="-1",col_name="enabled",colhdr="Enb"},{width="10",alignment="-1",col_name="addr",colhdr="Address"},{width="40",alignment="2",col_name="what",colhdr="What"}],body=[]}
+(gdb) 
+~"\n"
+~"apropos\n"
+~"Search for commands matching a REGEXP.\n"
+~"Usage: apropos [-v] REGEXP\nFlag -v indicates to produce a verbose output, showing full documentation\nof the matching commands."
+~"\n"
+~"\n"
+~"disable pretty-printer\n"
+~"GDB command to disable the specified pretty-printer.\n"
+~"\n"
+~"Usage: disable pretty-printer [OBJECT-REGEXP [NAME-REGEXP]]\n"
+~"\n"
+~"OBJECT-REGEXP is a regular expression matching the objects to examine.\n"
+~"Objects are \"global\", the program space's file, and the objfiles within\n"
+~"that program space.\n"
+~"\n"
+~"NAME-REGEXP matches the name of the pretty-printer.\nIndividual printers in a collection are named as\nprinter-name;subprinter-name."
+~"\n"
+~"\n"
+~"disable unwinder\n"
+~"GDB command to disable the specified unwinder.\n"
+~"\n"
+~"Usage: disable unwinder [LOCUS-REGEXP [NAME-REGEXP]]\n"
+~"\n"
+~"LOCUS-REGEXP is a regular expression specifying the unwinders to\n"
+~"disable.  It can 'global', 'progspace', or the name of an objfile\n"
+~"within that progspace.\n"
+~"\n"
+~"NAME_REGEXP is a regular expression to filter unwinder names.  If\nthis omitted for a specified locus, then all registered unwinders\nin the locus are affected."
+~"\n"
+~"\n"
+~"disable xmethod\n"
+~"GDB command to disable a specified (group of) xmethod(s).\n"
+~"\n"
+~"Usage: disable xmethod [LOCUS-REGEXP [NAME-REGEXP]]\n"
+~"\n"
+~"LOCUS-REGEXP is a regular expression matching the location of the\n"
+~"xmethod matchers.  If it is omitted, all registered xmethod matchers\n"
+~"from all loci are disabled.  A locus could be 'global', a regular\n"
+~"expression matching the current program space's filename, or a regular\n"
+~"expression filenames of objfiles. Locus could be 'progspace' to specify\n"
+~"that only xmethods from the current progspace should be disabled.\n"
+~"\n"
+~"NAME-REGEXP is a regular expression matching the names of xmethods\n"
+~"within a given locus.  If this omitted for a specified locus, then all\n"
+~"registered xmethod matchers in the locus are disabled.  To disable\n"
+~"only a certain xmethods managed by a single matcher, the name regexp\n"
+~"can be specified as matcher-name-regexp;xmethod-name-regexp.\n"
+~"\n"
+~"enable pretty-printer\n"
+~"GDB command to enable the specified pretty-printer.\n"
+~"\n"
+~"Usage: enable pretty-printer [OBJECT-REGEXP [NAME-REGEXP]]\n"
+~"\n"
+~"OBJECT-REGEXP is a regular expression matching the objects to examine.\n"
+~"Objects are \"global\", the program space's file, and the objfiles within\n"
+~"that program space.\n"
+~"\n"
+~"NAME-REGEXP matches the name of the pretty-printer.\nIndividual printers in a collection are named as\nprinter-name;subprinter-name."
+~"\n"
+~"\n"
+~"enable unwinder\n"
+~"GDB command to enable unwinders.\n"
+~"\n"
+~"Usage: enable unwinder [LOCUS-REGEXP [NAME-REGEXP]]\n"
+~"\n"
+~"LOCUS-REGEXP is a regular expression specifying the unwinders to\n"
+~"enable.  It can 'global', 'progspace', or the name of an objfile\n"
+~"within that progspace.\n"
+~"\n"
+~"NAME_REGEXP is a regular expression to filter unwinder names.  If\nthis omitted for a specified locus, then all registered unwinders\nin the locus are affected."
+~"\n"
+~"\n"
+~"enable xmethod\n"
+~"GDB command to enable a specified (group of) xmethod(s).\n"
+~"\n"
+~"Usage: enable xmethod [LOCUS-REGEXP [NAME-REGEXP]]\n"
+~"\n"
+~"LOCUS-REGEXP is a regular expression matching the location of the\n"
+~"xmethod matchers.  If it is omitted, all registered xmethods matchers\n"
+~"from all loci are enabled.  A locus could be 'global', a regular expression\n"
+~"matching the current program space's filename, or a regular expression\n"
+~"matching filenames of objfiles.  Locus could be 'progspace' to specify that\n"
+~"only xmethods from the current progspace should be enabled.\n"
+~"\n"
+~"NAME-REGEXP is a regular expression matching the names of xmethods\n"
+~"within a given locus.  If this omitted for a specified locus, then all\n"
+~"registered xmethod matchers in the locus are enabled.  To enable only\n"
+~"a certain xmethods managed by a single matcher, the name regexp can be\n"
+~"specified as matcher-name-regexp;xmethod-name-regexp.\n"
+~"\n"
+~"function _any_caller_matches\n"
+~"Compare all calling function's names with a regexp.\n\nUsage: $_any_caller_matches (REGEX [, NUMBER-OF-FRAMES])\n\nArguments:\n\n  REGEX: The regular expression to compare the function's name with.\n\n  NUMBER-OF-FRAMES: How many stack frames to traverse back from the currently\n    selected frame to compare with.  If the value is greater than the depth of\n    the stack from that point then the result is False.\n    The default is 1.\n\nReturns:\n  True if any function's name matches REGEX."
+~"\n"
+~"\n"
+~"function _caller_matches\n"
+~"Compare the calling function's name with a regexp.\n\nUsage: $_caller_matches (REGEX [, NUMBER-OF-FRAMES])\n\nArguments:\n\n  REGEX: The regular expression to compare the function's name with.\n\n  NUMBER-OF-FRAMES: How many stack frames to traverse back from the currently\n    selected frame to compare with.  If the value is greater than the depth of\n    the stack from that point then the result is False.\n    The default is 1.\n\nReturns:\n  True if the function's name at the specified frame matches REGEX."
+~"\n"
+~"\n"
+~"info args\n"
+~"All argument variables of current stack frame or those matching REGEXPs.\n"
+~"Usage: info args [-q] [-t TYPEREGEXP] [NAMEREGEXP]\n"
+~"Prints the argument variables of the current stack frame.\n"
+~"If NAMEREGEXP is provided, only prints the argument variables whose name\n"
+~"matches NAMEREGEXP.\n"
+~"If -t TYPEREGEXP is provided, only prints the argument variables whose type\n"
+~"matches TYPEREGEXP.  Note that the matching is done with the type\nprinted by the 'whatis' command.\nBy default, the command might produce headers and/or messages indicating\nwhy no argument variables can be printed.\nThe flag -q disables the production of these headers and messages."
+~"\n"
+~"\n"
+~"info auto-load gdb-scripts\n"
+~"Print the list of automatically loaded sequences of commands.\n"
+~"Usage: info auto-load gdb-scripts [REGEXP]\n"
+~"\n"
+~"info auto-load guile-scripts\n"
+~"Print the list of automatically loaded Guile scripts.\n"
+~"Usage: info auto-load guile-scripts [REGEXP]\n"
+~"\n"
+~"info auto-load python-scripts\n"
+~"Print the list of automatically loaded Python scripts.\n"
+~"Usage: info auto-load python-scripts [REGEXP]\n"
+~"\n"
+~"info classes\n"
+~"All Objective-C classes, or those matching REGEXP.\n"
+~"\n"
+~"info exceptions\n"
+~"List all Ada exception names.\n"
+~"Usage: info exceptions [REGEXP]\nIf a regular expression is passed as an argument, only those matching\nthe regular expression are listed."
+~"\n"
+~"\n"
+~"info functions\n"
+~"All function names or those matching REGEXPs.\n"
+~"Usage: info functions [-q] [-n] [-t TYPEREGEXP] [NAMEREGEXP]\n"
+~"Prints the functions.\n"
+~"If NAMEREGEXP is provided, only prints the functions whose name\n"
+~"matches NAMEREGEXP.\n"
+~"If -t TYPEREGEXP is provided, only prints the functions whose type\n"
+~"matches TYPEREGEXP.  Note that the matching is done with the type\nprinted by the 'whatis' command.\nBy default, the command might produce headers and/or messages indicating\nwhy no functions can be printed.\nThe flag -q disables the production of these headers and messages.\nBy default, the command will include non-debug symbols in the output;\nthese can be excluded using the -n flag."
+~"\n"
+~"\n"
+~"info locals\n"
+~"All local variables of current stack frame or those matching REGEXPs.\n"
+~"Usage: info locals [-q] [-t TYPEREGEXP] [NAMEREGEXP]\n"
+~"Prints the local variables of the current stack frame.\n"
+~"If NAMEREGEXP is provided, only prints the local variables whose name\n"
+~"matches NAMEREGEXP.\n"
+~"If -t TYPEREGEXP is provided, only prints the local variables whose type\n"
+~"matches TYPEREGEXP.  Note that the matching is done with the type\nprinted by the 'whatis' command.\nBy default, the command might produce headers and/or messages indicating\nwhy no local variables can be printed.\nThe flag -q disables the production of these headers and messages."
+~"\n"
+~"\n"
+~"info module functions\n"
+~"Display functions arranged by modules.\n"
+~"Usage: info module functions [-q] [-m MODREGEXP] [-t TYPEREGEXP] [REGEXP]\n"
+~"Print a summary of all functions within each Fortran module, grouped by\n"
+~"module and file.  For each function the line on which the function is\n"
+~"defined is given along with the type signature and name of the function.\n"
+~"\n"
+~"If REGEXP is provided then only functions whose name matches REGEXP are\n"
+~"listed.  If MODREGEXP is provided then only functions in modules matching\n"
+~"MODREGEXP are listed.  If TYPEREGEXP is given then only functions whose\n"
+~"type signature matches TYPEREGEXP are listed.\n\nThe -q flag suppresses printing some header information."
+~"\n"
+~"\n"
+~"info module variables\n"
+~"Display variables arranged by modules.\n"
+~"Usage: info module variables [-q] [-m MODREGEXP] [-t TYPEREGEXP] [REGEXP]\n"
+~"Print a summary of all variables within each Fortran module, grouped by\n"
+~"module and file.  For each variable the line on which the variable is\n"
+~"defined is given along with the type and name of the variable.\n"
+~"\n"
+~"If REGEXP is provided then only variables whose name matches REGEXP are\n"
+~"listed.  If MODREGEXP is provided then only variables in modules matching\n"
+~"MODREGEXP are listed.  If TYPEREGEXP is given then only variables whose\n"
+~"type matches TYPEREGEXP are listed.\n\nThe -q flag suppresses printing some header information."
+~"\n"
+~"\n"
+~"info modules\n"
+~"All module names, or those matching REGEXP.\n"
+~"\n"
+~"info pretty-printer\n"
+~"GDB command to list all registered pretty-printers.\n"
+~"\n"
+~"Usage: info pretty-printer [OBJECT-REGEXP [NAME-REGEXP]]\n"
+~"\n"
+~"OBJECT-REGEXP is a regular expression matching the objects to list.\n"
+~"Objects are \"global\", the program space's file, and the objfiles within\n"
+~"that program space.\n"
+~"\n"
+~"NAME-REGEXP matches the name of the pretty-printer.\nIndividual printers in a collection are named as\nprinter-name;subprinter-name."
+~"\n"
+~"\n"
+~"info selectors\n"
+~"All Objective-C selectors, or those matching REGEXP.\n"
+~"\n"
+~"info sources\n"
+~"All source files in the program or those matching REGEXP.\n"
+~"Usage: info sources [OPTION]... [REGEXP]\n"
+~"By default, REGEXP is used to match anywhere in the filename.\n"
+~"\n"
+~"Options:\n"
+~"  -dirname\n"
+~"    Show only the files having a dirname matching REGEXP.\n"
+~"\n"
+~"  -basename\n"
+~"    Show only the files having a basename matching REGEXP.\n"
+~"\n"
+~"info types\n"
+~"All type names, or those matching REGEXP.\n"
+~"Usage: info types [-q] [REGEXP]\n"
+~"Print information about all types matching REGEXP, or all types if no\n"
+~"REGEXP is given.  The optional flag -q disables printing of headers.\n"
+~"\n"
+~"info unwinder\n"
+~"GDB command to list unwinders.\n"
+~"\n"
+~"Usage: info unwinder [LOCUS-REGEXP [NAME-REGEXP]]\n"
+~"\n"
+~"LOCUS-REGEXP is a regular expression matching the location of the\n"
+~"unwinder.  If it is omitted, all registered unwinders from all\n"
+~"loci are listed.  A locus can be 'global', 'progspace' to list\n"
+~"the unwinders from the current progspace, or a regular expression\n"
+~"matching filenames of objfiles.\n"
+~"\n"
+~"NAME-REGEXP is a regular expression to filter unwinder names.  If\nthis omitted for a specified locus, then all registered unwinders\nin the locus are listed."
+~"\n"
+~"\n"
+~"info variables\n"
+~"All global and static variable names or those matching REGEXPs.\n"
+~"Usage: info variables [-q] [-n] [-t TYPEREGEXP] [NAMEREGEXP]\n"
+~"Prints the global and static variables.\n"
+~"If NAMEREGEXP is provided, only prints the global and static variables whose name\n"
+~"matches NAMEREGEXP.\n"
+~"If -t TYPEREGEXP is provided, only prints the global and static variables whose type\n"
+~"matches TYPEREGEXP.  Note that the matching is done with the type\nprinted by the 'whatis' command.\nBy default, the command might produce headers and/or messages indicating\nwhy no global and static variables can be printed.\nThe flag -q disables the production of these headers and messages.\nBy default, the command will include non-debug symbols in the output;\nthese can be excluded using the -n flag."
+~"\n"
+~"\n"
+~"info xmethod\n"
+~"GDB command to list registered xmethod matchers.\n"
+~"\n"
+~"Usage: info xmethod [LOCUS-REGEXP [NAME-REGEXP]]\n"
+~"\n"
+~"LOCUS-REGEXP is a regular expression matching the location of the\n"
+~"xmethod matchers.  If it is omitted, all registered xmethod matchers\n"
+~"from all loci are listed.  A locus could be 'global', a regular expression\n"
+~"matching the current program space's filename, or a regular expression\n"
+~"matching filenames of objfiles.  Locus could be 'progspace' to specify that\n"
+~"only xmethods from the current progspace should be listed.\n"
+~"\n"
+~"NAME-REGEXP is a regular expression matching the names of xmethod\n"
+~"matchers.  If this omitted for a specified locus, then all registered\n"
+~"xmethods in the locus are listed.  To list only a certain xmethods\n"
+~"managed by a single matcher, the name regexp can be specified as\n"
+~"matcher-name-regexp;xmethod-name-regexp.\n"
+~"\n"
+~"maintenance expand-symtabs\n"
+~"Expand symbol tables.\n"
+~"With an argument REGEXP, only expand the symbol tables with matching names.\n"
+~"\n"
+~"maintenance info line-table\n"
+~"List the contents of all line tables, from all symbol tables.\n"
+~"With an argument REGEXP, list just the line tables for the symbol\ntables with matching names."
+~"\n"
+~"\n"
+~"maintenance info symtabs\n"
+~"List the full symbol tables for all object files.\n"
+~"This does not include information about individual symbols, blocks, or\n"
+~"linetables --- just the symbol table structures themselves.\n"
+~"With an argument REGEXP, list the symbol tables with matching names.\n"
+~"\n"
+~"maintenance print objfiles\n"
+~"Print dump of current object file definitions.\n"
+~"With an argument REGEXP, list the object files with matching names.\n"
+~"\n"
+~"rbreak\n"
+~"Set a breakpoint for all functions matching REGEXP.\n"
+~"\n"
+~"set style title\n"
+~"Title display styling.\n"
+~"Configure title colors and display intensity\n"
+~"Some commands (such as \"apropos -v REGEXP\") use the title style to improve\nreadability."
+~"\n"
+~"\n"
+~"sharedlibrary\n"
+~"Load shared object library symbols for files matching REGEXP.\n"
+~"\n"
+~"show style title\n"
+~"Title display styling.\n"
+~"Configure title colors and display intensity\n"
+~"Some commands (such as \"apropos -v REGEXP\") use the title style to improve\nreadability."
+~"\n"
+~"\n"
+~"thread find\n"
+~"Find threads that match a regular expression.\n"
+~"Usage: thread find REGEXP\n"
+~"Will display thread ids whose name, target ID, or extra info matches REGEXP.\n"
+^done
+(gdb) 
+88^error,msg="No registers."
+(gdb) 
+89^done,threads=[]
+(gdb) 
+90^done,BreakpointTable={nr_rows="0",nr_cols="6",hdr=[{width="7",alignment="-1",col_name="number",colhdr="Num"},{width="14",alignment="-1",col_name="type",colhdr="Type"},{width="4",alignment="-1",col_name="disp",colhdr="Disp"},{width="3",alignment="-1",col_name="enabled",colhdr="Enb"},{width="10",alignment="-1",col_name="addr",colhdr="Address"},{width="40",alignment="2",col_name="what",colhdr="What"}],body=[]}
+(gdb) 
+^done
+(gdb) 
+91^error,msg="No registers."
+(gdb) 
+92^done,threads=[]
+(gdb) 
+93^done,BreakpointTable={nr_rows="0",nr_cols="6",hdr=[{width="7",alignment="-1",col_name="number",colhdr="Num"},{width="14",alignment="-1",col_name="type",colhdr="Type"},{width="4",alignment="-1",col_name="disp",colhdr="Disp"},{width="3",alignment="-1",col_name="enabled",colhdr="Enb"},{width="10",alignment="-1",col_name="addr",colhdr="Address"},{width="40",alignment="2",col_name="what",colhdr="What"}],body=[]}
+(gdb) 
+~"Starting program:  \n"
+&"No executable file specified.\n"
+&"Use the \"file\" or \"exec-file\" command.\n"
+^error,msg="No executable file specified.\nUse the \"file\" or \"exec-file\" command."
+(gdb) 
+94^error,msg="No registers."
+(gdb) 
+95^done,threads=[]
+(gdb) 
+96^done,BreakpointTable={nr_rows="0",nr_cols="6",hdr=[{width="7",alignment="-1",col_name="number",colhdr="Num"},{width="14",alignment="-1",col_name="type",colhdr="Type"},{width="4",alignment="-1",col_name="disp",colhdr="Disp"},{width="3",alignment="-1",col_name="enabled",colhdr="Enb"},{width="10",alignment="-1",col_name="addr",colhdr="Address"},{width="40",alignment="2",col_name="what",colhdr="What"}],body=[]}
+(gdb) 
+~"Starting program:  call\n"
+&"No executable file specified.\n"
+&"Use the \"file\" or \"exec-file\" command.\n"
+^error,msg="No executable file specified.\nUse the \"file\" or \"exec-file\" command."
+(gdb) 
+97^error,msg="No registers."
+(gdb) 
+98^done,threads=[]
+(gdb) 
+99^done,BreakpointTable={nr_rows="0",nr_cols="6",hdr=[{width="7",alignment="-1",col_name="number",colhdr="Num"},{width="14",alignment="-1",col_name="type",colhdr="Type"},{width="4",alignment="-1",col_name="disp",colhdr="Disp"},{width="3",alignment="-1",col_name="enabled",colhdr="Enb"},{width="10",alignment="-1",col_name="addr",colhdr="Address"},{width="40",alignment="2",col_name="what",colhdr="What"}],body=[]}
+(gdb) 
+&"The program is not being run.\n"
+^error,msg="The program is not being run."
+(gdb) 
+100^error,msg="No registers."
+(gdb) 
+101^done,threads=[]
+(gdb) 
+102^done,BreakpointTable={nr_rows="0",nr_cols="6",hdr=[{width="7",alignment="-1",col_name="number",colhdr="Num"},{width="14",alignment="-1",col_name="type",colhdr="Type"},{width="4",alignment="-1",col_name="disp",colhdr="Disp"},{width="3",alignment="-1",col_name="enabled",colhdr="Enb"},{width="10",alignment="-1",col_name="addr",colhdr="Address"},{width="40",alignment="2",col_name="what",colhdr="What"}],body=[]}
+(gdb) 
+&"The program is not being run.\n"
+^error,msg="The program is not being run."
+(gdb) 
+103^error,msg="No registers."
+(gdb) 
+104^done,threads=[]
+(gdb) 
+105^done,BreakpointTable={nr_rows="0",nr_cols="6",hdr=[{width="7",alignment="-1",col_name="number",colhdr="Num"},{width="14",alignment="-1",col_name="type",colhdr="Type"},{width="4",alignment="-1",col_name="disp",colhdr="Disp"},{width="3",alignment="-1",col_name="enabled",colhdr="Enb"},{width="10",alignment="-1",col_name="addr",colhdr="Address"},{width="40",alignment="2",col_name="what",colhdr="What"}],body=[]}
+(gdb) 
+~"Catchpoint 1 (syscalls 'exit' [1] 'fork' [2] 'waitpid' [7] 'execve' [11] 'wait4' [114] 'clone' [120] 'vfork' [190] 'exit_group' [252] 'waitid' [284] 'unshare' [310])\n"
+=breakpoint-created,bkpt={number="1",type="catchpoint",disp="keep",enabled="y",what="exit, fork, waitpid, execve, wait4, clone, vfork, exit_group, waitid, unshare",catch-type="syscall",thread-groups=["i1"],times="0"}
+^done
+(gdb) 
+106^error,msg="No registers."
+(gdb) 
+107^done,threads=[]
+(gdb) 
+108^done,BreakpointTable={nr_rows="1",nr_cols="6",hdr=[{width="7",alignment="-1",col_name="number",colhdr="Num"},{width="14",alignment="-1",col_name="type",colhdr="Type"},{width="4",alignment="-1",col_name="disp",colhdr="Disp"},{width="3",alignment="-1",col_name="enabled",colhdr="Enb"},{width="10",alignment="-1",col_name="addr",colhdr="Address"},{width="40",alignment="2",col_name="what",colhdr="What"}],body=[bkpt={number="1",type="catchpoint",disp="keep",enabled="y",what="exit, fork, waitpid, execve, wait4, clone, vfork, exit_group, waitid, unshare",catch-type="syscall",thread-groups=["i1"],times="0"}]}
+(gdb) 
+~"Catchpoint 2 (syscalls 'exit' [1] 'fork' [2] 'waitpid' [7] 'execve' [11] 'wait4' [114] 'clone' [120] 'vfork' [190] 'exit_group' [252] 'waitid' [284] 'unshare' [310] 'wait4' [114])\n"
+=breakpoint-created,bkpt={number="2",type="catchpoint",disp="keep",enabled="y",what="exit, fork, waitpid, execve, wait4, clone, vfork, exit_group, waitid, unshare, wait4",catch-type="syscall",thread-groups=["i1"],times="0"}
+^done
+(gdb) 
+109^error,msg="No registers."
+(gdb) 
+110^done,threads=[]
+(gdb) 
+111^done,BreakpointTable={nr_rows="2",nr_cols="6",hdr=[{width="7",alignment="-1",col_name="number",colhdr="Num"},{width="14",alignment="-1",col_name="type",colhdr="Type"},{width="4",alignment="-1",col_name="disp",colhdr="Disp"},{width="3",alignment="-1",col_name="enabled",colhdr="Enb"},{width="10",alignment="-1",col_name="addr",colhdr="Address"},{width="40",alignment="2",col_name="what",colhdr="What"}],body=[bkpt={number="1",type="catchpoint",disp="keep",enabled="y",what="exit, fork, waitpid, execve, wait4, clone, vfork, exit_group, waitid, unshare",catch-type="syscall",thread-groups=["i1"],times="0"},bkpt={number="2",type="catchpoint",disp="keep",enabled="y",what="exit, fork, waitpid, execve, wait4, clone, vfork, exit_group, waitid, unshare, wait4",catch-type="syscall",thread-groups=["i1"],times="0"}]}
+(gdb) 
+&"Bad breakpoint argument: 'bnum'\n"
+^error,msg="Bad breakpoint argument: 'bnum'"
+(gdb) 
+112^error,msg="No registers."
+(gdb) 
+113^done,threads=[]
+(gdb) 
+114^done,BreakpointTable={nr_rows="2",nr_cols="6",hdr=[{width="7",alignment="-1",col_name="number",colhdr="Num"},{width="14",alignment="-1",col_name="type",colhdr="Type"},{width="4",alignment="-1",col_name="disp",colhdr="Disp"},{width="3",alignment="-1",col_name="enabled",colhdr="Enb"},{width="10",alignment="-1",col_name="addr",colhdr="Address"},{width="40",alignment="2",col_name="what",colhdr="What"}],body=[bkpt={number="1",type="catchpoint",disp="keep",enabled="y",what="exit, fork, waitpid, execve, wait4, clone, vfork, exit_group, waitid, unshare",catch-type="syscall",thread-groups=["i1"],times="0"},bkpt={number="2",type="catchpoint",disp="keep",enabled="y",what="exit, fork, waitpid, execve, wait4, clone, vfork, exit_group, waitid, unshare, wait4",catch-type="syscall",thread-groups=["i1"],times="0"}]}
+(gdb) 
+^done
+(gdb) 
+115^error,msg="No registers."
+(gdb) 
+116^done,threads=[]
+(gdb) 
+117^done,BreakpointTable={nr_rows="2",nr_cols="6",hdr=[{width="7",alignment="-1",col_name="number",colhdr="Num"},{width="14",alignment="-1",col_name="type",colhdr="Type"},{width="4",alignment="-1",col_name="disp",colhdr="Disp"},{width="3",alignment="-1",col_name="enabled",colhdr="Enb"},{width="10",alignment="-1",col_name="addr",colhdr="Address"},{width="40",alignment="2",col_name="what",colhdr="What"}],body=[bkpt={number="1",type="catchpoint",disp="keep",enabled="y",what="exit, fork, waitpid, execve, wait4, clone, vfork, exit_group, waitid, unshare",catch-type="syscall",thread-groups=["i1"],times="0"},bkpt={number="2",type="catchpoint",disp="keep",enabled="y",what="exit, fork, waitpid, execve, wait4, clone, vfork, exit_group, waitid, unshare, wait4",catch-type="syscall",thread-groups=["i1"],times="0"}]}
+(gdb) 
+&"Invalid number \"08\".\n"
+^error,msg="Invalid number \"08\"."
+(gdb) 
+118^error,msg="No registers."
+(gdb) 
+119^done,threads=[]
+(gdb) 
+120^done,BreakpointTable={nr_rows="2",nr_cols="6",hdr=[{width="7",alignment="-1",col_name="number",colhdr="Num"},{width="14",alignment="-1",col_name="type",colhdr="Type"},{width="4",alignment="-1",col_name="disp",colhdr="Disp"},{width="3",alignment="-1",col_name="enabled",colhdr="Enb"},{width="10",alignment="-1",col_name="addr",colhdr="Address"},{width="40",alignment="2",col_name="what",colhdr="What"}],body=[bkpt={number="1",type="catchpoint",disp="keep",enabled="y",what="exit, fork, waitpid, execve, wait4, clone, vfork, exit_group, waitid, unshare",catch-type="syscall",thread-groups=["i1"],times="0"},bkpt={number="2",type="catchpoint",disp="keep",enabled="y",what="exit, fork, waitpid, execve, wait4, clone, vfork, exit_group, waitid, unshare, wait4",catch-type="syscall",thread-groups=["i1"],times="0"}]}
+(gdb) 
+^done
+(gdb) 
+121^error,msg="No registers."
+(gdb) 
+122^done,threads=[]
+(gdb) 
+123^done,BreakpointTable={nr_rows="2",nr_cols="6",hdr=[{width="7",alignment="-1",col_name="number",colhdr="Num"},{width="14",alignment="-1",col_name="type",colhdr="Type"},{width="4",alignment="-1",col_name="disp",colhdr="Disp"},{width="3",alignment="-1",col_name="enabled",colhdr="Enb"},{width="10",alignment="-1",col_name="addr",colhdr="Address"},{width="40",alignment="2",col_name="what",colhdr="What"}],body=[bkpt={number="1",type="catchpoint",disp="keep",enabled="y",what="exit, fork, waitpid, execve, wait4, clone, vfork, exit_group, waitid, unshare",catch-type="syscall",thread-groups=["i1"],times="0"},bkpt={number="2",type="catchpoint",disp="keep",enabled="y",what="exit, fork, waitpid, execve, wait4, clone, vfork, exit_group, waitid, unshare, wait4",catch-type="syscall",thread-groups=["i1"],times="0"}]}
+(gdb) 
+&"No symbol table is loaded.  Use the \"file\" command.\n"
+^error,msg="No symbol table is loaded.  Use the \"file\" command."
+(gdb) 
+124^error,msg="No registers."
+(gdb) 
+125^done,threads=[]
+(gdb) 
+126^done,BreakpointTable={nr_rows="2",nr_cols="6",hdr=[{width="7",alignment="-1",col_name="number",colhdr="Num"},{width="14",alignment="-1",col_name="type",colhdr="Type"},{width="4",alignment="-1",col_name="disp",colhdr="Disp"},{width="3",alignment="-1",col_name="enabled",colhdr="Enb"},{width="10",alignment="-1",col_name="addr",colhdr="Address"},{width="40",alignment="2",col_name="what",colhdr="What"}],body=[bkpt={number="1",type="catchpoint",disp="keep",enabled="y",what="exit, fork, waitpid, execve, wait4, clone, vfork, exit_group, waitid, unshare",catch-type="syscall",thread-groups=["i1"],times="0"},bkpt={number="2",type="catchpoint",disp="keep",enabled="y",what="exit, fork, waitpid, execve, wait4, clone, vfork, exit_group, waitid, unshare, wait4",catch-type="syscall",thread-groups=["i1"],times="0"}]}
+(gdb) 
+&"No symbol table is loaded.  Use the \"file\" command.\n"
+^error,msg="No symbol table is loaded.  Use the \"file\" command."
+(gdb) 
+127^error,msg="No registers."
+(gdb) 
+128^done,threads=[]
+(gdb) 
+129^done,BreakpointTable={nr_rows="2",nr_cols="6",hdr=[{width="7",alignment="-1",col_name="number",colhdr="Num"},{width="14",alignment="-1",col_name="type",colhdr="Type"},{width="4",alignment="-1",col_name="disp",colhdr="Disp"},{width="3",alignment="-1",col_name="enabled",colhdr="Enb"},{width="10",alignment="-1",col_name="addr",colhdr="Address"},{width="40",alignment="2",col_name="what",colhdr="What"}],body=[bkpt={number="1",type="catchpoint",disp="keep",enabled="y",what="exit, fork, waitpid, execve, wait4, clone, vfork, exit_group, waitid, unshare",catch-type="syscall",thread-groups=["i1"],times="0"},bkpt={number="2",type="catchpoint",disp="keep",enabled="y",what="exit, fork, waitpid, execve, wait4, clone, vfork, exit_group, waitid, unshare, wait4",catch-type="syscall",thread-groups=["i1"],times="0"}]}
+(gdb) 
+&"No symbol table is loaded.  Use the \"file\" command.\n"
+~"Breakpoint 3 (off) pending.\n"
+=breakpoint-created,bkpt={number="3",type="breakpoint",disp="keep",enabled="y",addr="<PENDING>",pending="off",times="0",original-location="off"}
+^done
+(gdb) 
+130^error,msg="No registers."
+(gdb) 
+131^done,threads=[]
+(gdb) 
+132^done,BreakpointTable={nr_rows="3",nr_cols="6",hdr=[{width="7",alignment="-1",col_name="number",colhdr="Num"},{width="14",alignment="-1",col_name="type",colhdr="Type"},{width="4",alignment="-1",col_name="disp",colhdr="Disp"},{width="3",alignment="-1",col_name="enabled",colhdr="Enb"},{width="10",alignment="-1",col_name="addr",colhdr="Address"},{width="40",alignment="2",col_name="what",colhdr="What"}],body=[bkpt={number="1",type="catchpoint",disp="keep",enabled="y",what="exit, fork, waitpid, execve, wait4, clone, vfork, exit_group, waitid, unshare",catch-type="syscall",thread-groups=["i1"],times="0"},bkpt={number="2",type="catchpoint",disp="keep",enabled="y",what="exit, fork, waitpid, execve, wait4, clone, vfork, exit_group, waitid, unshare, wait4",catch-type="syscall",thread-groups=["i1"],times="0"},bkpt={number="3",type="breakpoint",disp="keep",enabled="y",addr="<PENDING>",pending="off",times="0",original-location="off"}]}
+(gdb) 
+~"Type commands for breakpoint(s) 3, one per line.\n"
+~"End with a line saying just \"end\".\n"
+~">"
+~">"
+~">"
+~">"
+=breakpoint-modified,bkpt={number="3",type="breakpoint",disp="keep",enabled="y",addr="<PENDING>",pending="off",times="0",script={"silent","print \"$x is %d\\n\", $x","cont"},original-location="off"}
+^done
+(gdb) 
+133^error,msg="No registers."
+(gdb) 
+134^done,threads=[]
+(gdb) 
+135^done,BreakpointTable={nr_rows="3",nr_cols="6",hdr=[{width="7",alignment="-1",col_name="number",colhdr="Num"},{width="14",alignment="-1",col_name="type",colhdr="Type"},{width="4",alignment="-1",col_name="disp",colhdr="Disp"},{width="3",alignment="-1",col_name="enabled",colhdr="Enb"},{width="10",alignment="-1",col_name="addr",colhdr="Address"},{width="40",alignment="2",col_name="what",colhdr="What"}],body=[bkpt={number="1",type="catchpoint",disp="keep",enabled="y",what="exit, fork, waitpid, execve, wait4, clone, vfork, exit_group, waitid, unshare",catch-type="syscall",thread-groups=["i1"],times="0"},bkpt={number="2",type="catchpoint",disp="keep",enabled="y",what="exit, fork, waitpid, execve, wait4, clone, vfork, exit_group, waitid, unshare, wait4",catch-type="syscall",thread-groups=["i1"],times="0"},bkpt={number="3",type="breakpoint",disp="keep",enabled="y",addr="<PENDING>",pending="off",times="0",script={"silent","print \"$x is %d\\n\", $x","cont"},original-location="off"}]}
+(gdb) 
+&"No symbol table is loaded.  Use the \"file\" command.\n"
+^error,msg="No symbol table is loaded.  Use the \"file\" command."
+(gdb) 
+136^error,msg="No registers."
+(gdb) 
+137^done,threads=[]
+(gdb) 
+138^done,BreakpointTable={nr_rows="3",nr_cols="6",hdr=[{width="7",alignment="-1",col_name="number",colhdr="Num"},{width="14",alignment="-1",col_name="type",colhdr="Type"},{width="4",alignment="-1",col_name="disp",colhdr="Disp"},{width="3",alignment="-1",col_name="enabled",colhdr="Enb"},{width="10",alignment="-1",col_name="addr",colhdr="Address"},{width="40",alignment="2",col_name="what",colhdr="What"}],body=[bkpt={number="1",type="catchpoint",disp="keep",enabled="y",what="exit, fork, waitpid, execve, wait4, clone, vfork, exit_group, waitid, unshare",catch-type="syscall",thread-groups=["i1"],times="0"},bkpt={number="2",type="catchpoint",disp="keep",enabled="y",what="exit, fork, waitpid, execve, wait4, clone, vfork, exit_group, waitid, unshare, wait4",catch-type="syscall",thread-groups=["i1"],times="0"},bkpt={number="3",type="breakpoint",disp="keep",enabled="y",addr="<PENDING>",pending="off",times="0",script={"silent","print \"$x is %d\\n\", $x","cont"},original-location="off"}]}
+(gdb) 
+&"No symbol table is loaded.  Use the \"file\" command.\n"
+^error,msg="No symbol table is loaded.  Use the \"file\" command."
+(gdb) 
+139^error,msg="No registers."
+(gdb) 
+140^done,threads=[]
+(gdb) 
+141^done,BreakpointTable={nr_rows="3",nr_cols="6",hdr=[{width="7",alignment="-1",col_name="number",colhdr="Num"},{width="14",alignment="-1",col_name="type",colhdr="Type"},{width="4",alignment="-1",col_name="disp",colhdr="Disp"},{width="3",alignment="-1",col_name="enabled",colhdr="Enb"},{width="10",alignment="-1",col_name="addr",colhdr="Address"},{width="40",alignment="2",col_name="what",colhdr="What"}],body=[bkpt={number="1",type="catchpoint",disp="keep",enabled="y",what="exit, fork, waitpid, execve, wait4, clone, vfork, exit_group, waitid, unshare",catch-type="syscall",thread-groups=["i1"],times="0"},bkpt={number="2",type="catchpoint",disp="keep",enabled="y",what="exit, fork, waitpid, execve, wait4, clone, vfork, exit_group, waitid, unshare, wait4",catch-type="syscall",thread-groups=["i1"],times="0"},bkpt={number="3",type="breakpoint",disp="keep",enabled="y",addr="<PENDING>",pending="off",times="0",script={"silent","print \"$x is %d\\n\", $x","cont"},original-location="off"}]}
+(gdb) 
+&"No symbol table is loaded.  Use the \"file\" command.\n"
+^error,msg="No symbol table is loaded.  Use the \"file\" command."
+(gdb) 
+142^error,msg="No registers."
+(gdb) 
+143^done,threads=[]
+(gdb) 
+144^done,BreakpointTable={nr_rows="3",nr_cols="6",hdr=[{width="7",alignment="-1",col_name="number",colhdr="Num"},{width="14",alignment="-1",col_name="type",colhdr="Type"},{width="4",alignment="-1",col_name="disp",colhdr="Disp"},{width="3",alignment="-1",col_name="enabled",colhdr="Enb"},{width="10",alignment="-1",col_name="addr",colhdr="Address"},{width="40",alignment="2",col_name="what",colhdr="What"}],body=[bkpt={number="1",type="catchpoint",disp="keep",enabled="y",what="exit, fork, waitpid, execve, wait4, clone, vfork, exit_group, waitid, unshare",catch-type="syscall",thread-groups=["i1"],times="0"},bkpt={number="2",type="catchpoint",disp="keep",enabled="y",what="exit, fork, waitpid, execve, wait4, clone, vfork, exit_group, waitid, unshare, wait4",catch-type="syscall",thread-groups=["i1"],times="0"},bkpt={number="3",type="breakpoint",disp="keep",enabled="y",addr="<PENDING>",pending="off",times="0",script={"silent","print \"$x is %d\\n\", $x","cont"},original-location="off"}]}
+(gdb) 
+~"List of classes of commands:\n\n"
+~"aliases -- User-defined aliases of other commands.\n"
+~"breakpoints -- Making program stop at certain points.\n"
+~"data -- Examining data.\n"
+~"files -- Specifying and examining files.\n"
+~"internals -- Maintenance commands.\n"
+~"obscure -- Obscure features.\n"
+~"running -- Running the program.\n"
+~"stack -- Examining the stack.\n"
+~"status -- Status inquiries.\n"
+~"support -- Support facilities.\n"
+~"text-user-interface -- TUI is the GDB text based interface.\n"
+~"tracepoints -- Tracing of program execution without stopping the program.\n"
+~"user-defined -- User-defined commands.\n"
+~"\nType \"help"
+~"\" followed by a class name for a list of commands in that class.\nType \"help all\" for the list of all commands."
+~"\nType \"help"
+~"\" followed by command name for full documentation.\n"
+~"Type \"apropos word\" to search for commands related to \"word\".\n"
+~"Type \"apropos -v word\" for full documentation of commands related to \"word\".\n"
+~"Command name abbreviations are allowed if unambiguous.\n"
+^done
+(gdb) 
+145^error,msg="No registers."
+(gdb) 
+146^done,threads=[]
+(gdb) 
+147^done,BreakpointTable={nr_rows="3",nr_cols="6",hdr=[{width="7",alignment="-1",col_name="number",colhdr="Num"},{width="14",alignment="-1",col_name="type",colhdr="Type"},{width="4",alignment="-1",col_name="disp",colhdr="Disp"},{width="3",alignment="-1",col_name="enabled",colhdr="Enb"},{width="10",alignment="-1",col_name="addr",colhdr="Address"},{width="40",alignment="2",col_name="what",colhdr="What"}],body=[bkpt={number="1",type="catchpoint",disp="keep",enabled="y",what="exit, fork, waitpid, execve, wait4, clone, vfork, exit_group, waitid, unshare",catch-type="syscall",thread-groups=["i1"],times="0"},bkpt={number="2",type="catchpoint",disp="keep",enabled="y",what="exit, fork, waitpid, execve, wait4, clone, vfork, exit_group, waitid, unshare, wait4",catch-type="syscall",thread-groups=["i1"],times="0"},bkpt={number="3",type="breakpoint",disp="keep",enabled="y",addr="<PENDING>",pending="off",times="0",script={"silent","print \"$x is %d\\n\", $x","cont"},original-location="off"}]}
+(gdb) 
+&"No symbol table is loaded.  Use the \"file\" command.\n"
+^error,msg="No symbol table is loaded.  Use the \"file\" command."
+(gdb) 
+148^error,msg="No registers."
+(gdb) 
+149^done,threads=[]
+(gdb) 
+150^done,BreakpointTable={nr_rows="3",nr_cols="6",hdr=[{width="7",alignment="-1",col_name="number",colhdr="Num"},{width="14",alignment="-1",col_name="type",colhdr="Type"},{width="4",alignment="-1",col_name="disp",colhdr="Disp"},{width="3",alignment="-1",col_name="enabled",colhdr="Enb"},{width="10",alignment="-1",col_name="addr",colhdr="Address"},{width="40",alignment="2",col_name="what",colhdr="What"}],body=[bkpt={number="1",type="catchpoint",disp="keep",enabled="y",what="exit, fork, waitpid, execve, wait4, clone, vfork, exit_group, waitid, unshare",catch-type="syscall",thread-groups=["i1"],times="0"},bkpt={number="2",type="catchpoint",disp="keep",enabled="y",what="exit, fork, waitpid, execve, wait4, clone, vfork, exit_group, waitid, unshare, wait4",catch-type="syscall",thread-groups=["i1"],times="0"},bkpt={number="3",type="breakpoint",disp="keep",enabled="y",addr="<PENDING>",pending="off",times="0",script={"silent","print \"$x is %d\\n\", $x","cont"},original-location="off"}]}
+(gdb) 
+^done
+(gdb) 
+151^error,msg="No registers."
+(gdb) 
+152^done,threads=[]
+(gdb) 
+153^done,BreakpointTable={nr_rows="3",nr_cols="6",hdr=[{width="7",alignment="-1",col_name="number",colhdr="Num"},{width="14",alignment="-1",col_name="type",colhdr="Type"},{width="4",alignment="-1",col_name="disp",colhdr="Disp"},{width="3",alignment="-1",col_name="enabled",colhdr="Enb"},{width="10",alignment="-1",col_name="addr",colhdr="Address"},{width="40",alignment="2",col_name="what",colhdr="What"}],body=[bkpt={number="1",type="catchpoint",disp="keep",enabled="y",what="exit, fork, waitpid, execve, wait4, clone, vfork, exit_group, waitid, unshare",catch-type="syscall",thread-groups=["i1"],times="0"},bkpt={number="2",type="catchpoint",disp="keep",enabled="y",what="exit, fork, waitpid, execve, wait4, clone, vfork, exit_group, waitid, unshare, wait4",catch-type="syscall",thread-groups=["i1"],times="0"},bkpt={number="3",type="breakpoint",disp="keep",enabled="y",addr="<PENDING>",pending="off",times="0",script={"silent","print \"$x is %d\\n\", $x","cont"},original-location="off"}]}
+(gdb) 
+~"Type commands for breakpoint(s) 3, one per line.\n"
+~"End with a line saying just \"end\".\n"
+~">"
+~">"
+~">"
+~">"
+~">"
+~">"
+~">"
+~">"
+~">"
+~">"
+~">"
+~">"
+~">"
+~">"
+~">"
+~">"
+~">"
+~">"
+~">"
+~">"
+~">"
+~">"
+~">"
+~">"
+~">"
+~">"
+~">"
+~">"
+~">"
+~">"
+~">"
+~">"
+~">"
+~">"
+~">"
+~">"
+~">"
+~">"
+~">"
+~">"
+~">"
+~">"
+~">"
+~">"
+~">"
+~">"
+~">"
+~">"
+~">"
+~">"
+~">"
+~">"
+~">"
+~">"
+~">"
+~">"
+~">"
+~">"
+~">"
+~">"
+~">"
+~">"
+~">"
+~">"
+~">"
+~">"
+~">"
+~">"
+~">"
+~">"
+~">"
+~">"
+~">"
+~">"
+~">"
+~">"
+~">"
+~">"
+~">"
+~">"
+~">"
+&"Quit\n"
+^error,msg="Quit"
+(gdb) 
+154^error,msg="No registers."
+(gdb) 
+155^done,threads=[]
+(gdb) 
+156^done,BreakpointTable={nr_rows="3",nr_cols="6",hdr=[{width="7",alignment="-1",col_name="number",colhdr="Num"},{width="14",alignment="-1",col_name="type",colhdr="Type"},{width="4",alignment="-1",col_name="disp",colhdr="Disp"},{width="3",alignment="-1",col_name="enabled",colhdr="Enb"},{width="10",alignment="-1",col_name="addr",colhdr="Address"},{width="40",alignment="2",col_name="what",colhdr="What"}],body=[bkpt={number="1",type="catchpoint",disp="keep",enabled="y",what="exit, fork, waitpid, execve, wait4, clone, vfork, exit_group, waitid, unshare",catch-type="syscall",thread-groups=["i1"],times="0"},bkpt={number="2",type="catchpoint",disp="keep",enabled="y",what="exit, fork, waitpid, execve, wait4, clone, vfork, exit_group, waitid, unshare, wait4",catch-type="syscall",thread-groups=["i1"],times="0"},bkpt={number="3",type="breakpoint",disp="keep",enabled="y",addr="<PENDING>",pending="off",times="0",script={"silent","print \"$x is %d\\n\", $x","cont"},original-location="off"}]}
+(gdb) 
+&"Undefined command: \"$object\".  Try \"help\".\n"
+^error,msg="Undefined command: \"$object\".  Try \"help\"."
+(gdb) 
+157^error,msg="No registers."
+(gdb) 
+158^done,threads=[]
+(gdb) 
+159^done,BreakpointTable={nr_rows="3",nr_cols="6",hdr=[{width="7",alignment="-1",col_name="number",colhdr="Num"},{width="14",alignment="-1",col_name="type",colhdr="Type"},{width="4",alignment="-1",col_name="disp",colhdr="Disp"},{width="3",alignment="-1",col_name="enabled",colhdr="Enb"},{width="10",alignment="-1",col_name="addr",colhdr="Address"},{width="40",alignment="2",col_name="what",colhdr="What"}],body=[bkpt={number="1",type="catchpoint",disp="keep",enabled="y",what="exit, fork, waitpid, execve, wait4, clone, vfork, exit_group, waitid, unshare",catch-type="syscall",thread-groups=["i1"],times="0"},bkpt={number="2",type="catchpoint",disp="keep",enabled="y",what="exit, fork, waitpid, execve, wait4, clone, vfork, exit_group, waitid, unshare, wait4",catch-type="syscall",thread-groups=["i1"],times="0"},bkpt={number="3",type="breakpoint",disp="keep",enabled="y",addr="<PENDING>",pending="off",times="0",script={"silent","print \"$x is %d\\n\", $x","cont"},original-location="off"}]}
+(gdb) 
+~"$1 = 114\n"
+^done
+(gdb) 
+160^error,msg="No registers."
+(gdb) 
+161^done,threads=[]
+(gdb) 
+162^done,BreakpointTable={nr_rows="3",nr_cols="6",hdr=[{width="7",alignment="-1",col_name="number",colhdr="Num"},{width="14",alignment="-1",col_name="type",colhdr="Type"},{width="4",alignment="-1",col_name="disp",colhdr="Disp"},{width="3",alignment="-1",col_name="enabled",colhdr="Enb"},{width="10",alignment="-1",col_name="addr",colhdr="Address"},{width="40",alignment="2",col_name="what",colhdr="What"}],body=[bkpt={number="1",type="catchpoint",disp="keep",enabled="y",what="exit, fork, waitpid, execve, wait4, clone, vfork, exit_group, waitid, unshare",catch-type="syscall",thread-groups=["i1"],times="0"},bkpt={number="2",type="catchpoint",disp="keep",enabled="y",what="exit, fork, waitpid, execve, wait4, clone, vfork, exit_group, waitid, unshare, wait4",catch-type="syscall",thread-groups=["i1"],times="0"},bkpt={number="3",type="breakpoint",disp="keep",enabled="y",addr="<PENDING>",pending="off",times="0",script={"silent","print \"$x is %d\\n\", $x","cont"},original-location="off"}]}
+(gdb) 
+&"Undefined command: \"enable-timings\".  Try \"help\".\n"
+^error,msg="Undefined command: \"enable-timings\".  Try \"help\"."
+(gdb) 
+163^error,msg="No registers."
+(gdb) 
+164^done,threads=[]
+(gdb) 
+165^done,BreakpointTable={nr_rows="3",nr_cols="6",hdr=[{width="7",alignment="-1",col_name="number",colhdr="Num"},{width="14",alignment="-1",col_name="type",colhdr="Type"},{width="4",alignment="-1",col_name="disp",colhdr="Disp"},{width="3",alignment="-1",col_name="enabled",colhdr="Enb"},{width="10",alignment="-1",col_name="addr",colhdr="Address"},{width="40",alignment="2",col_name="what",colhdr="What"}],body=[bkpt={number="1",type="catchpoint",disp="keep",enabled="y",what="exit, fork, waitpid, execve, wait4, clone, vfork, exit_group, waitid, unshare",catch-type="syscall",thread-groups=["i1"],times="0"},bkpt={number="2",type="catchpoint",disp="keep",enabled="y",what="exit, fork, waitpid, execve, wait4, clone, vfork, exit_group, waitid, unshare, wait4",catch-type="syscall",thread-groups=["i1"],times="0"},bkpt={number="3",type="breakpoint",disp="keep",enabled="y",addr="<PENDING>",pending="off",times="0",script={"silent","print \"$x is %d\\n\", $x","cont"},original-location="off"}]}
+(gdb) 
+^done
+(gdb) 
+166^error,msg="No registers."
+(gdb) 
+167^done,threads=[],time={wallclock="0.00009",user="0.00009",system="0.00000"}
+(gdb) 
+168^done,BreakpointTable={nr_rows="3",nr_cols="6",hdr=[{width="7",alignment="-1",col_name="number",colhdr="Num"},{width="14",alignment="-1",col_name="type",colhdr="Type"},{width="4",alignment="-1",col_name="disp",colhdr="Disp"},{width="3",alignment="-1",col_name="enabled",colhdr="Enb"},{width="10",alignment="-1",col_name="addr",colhdr="Address"},{width="40",alignment="2",col_name="what",colhdr="What"}],body=[bkpt={number="1",type="catchpoint",disp="keep",enabled="y",what="exit, fork, waitpid, execve, wait4, clone, vfork, exit_group, waitid, unshare",catch-type="syscall",thread-groups=["i1"],times="0"},bkpt={number="2",type="catchpoint",disp="keep",enabled="y",what="exit, fork, waitpid, execve, wait4, clone, vfork, exit_group, waitid, unshare, wait4",catch-type="syscall",thread-groups=["i1"],times="0"},bkpt={number="3",type="breakpoint",disp="keep",enabled="y",addr="<PENDING>",pending="off",times="0",script={"silent","print \"$x is %d\\n\", $x","cont"},original-location="off"}]},time={wallclock="0.00027",user="0.00027",system="0.00000"}
+(gdb) 
+^error,msg="Undefined MI command: done",code="undefined-command"
+(gdb) 
+169^error,msg="No registers."
+(gdb) 
+170^done,threads=[],time={wallclock="0.00002",user="0.00002",system="0.00000"}
+(gdb) 
+171^done,BreakpointTable={nr_rows="3",nr_cols="6",hdr=[{width="7",alignment="-1",col_name="number",colhdr="Num"},{width="14",alignment="-1",col_name="type",colhdr="Type"},{width="4",alignment="-1",col_name="disp",colhdr="Disp"},{width="3",alignment="-1",col_name="enabled",colhdr="Enb"},{width="10",alignment="-1",col_name="addr",colhdr="Address"},{width="40",alignment="2",col_name="what",colhdr="What"}],body=[bkpt={number="1",type="catchpoint",disp="keep",enabled="y",what="exit, fork, waitpid, execve, wait4, clone, vfork, exit_group, waitid, unshare",catch-type="syscall",thread-groups=["i1"],times="0"},bkpt={number="2",type="catchpoint",disp="keep",enabled="y",what="exit, fork, waitpid, execve, wait4, clone, vfork, exit_group, waitid, unshare, wait4",catch-type="syscall",thread-groups=["i1"],times="0"},bkpt={number="3",type="breakpoint",disp="keep",enabled="y",addr="<PENDING>",pending="off",times="0",script={"silent","print \"$x is %d\\n\", $x","cont"},original-location="off"}]},time={wallclock="0.00025",user="0.00025",system="0.00000"}
+(gdb) 
+^done,completion="break",matches=["break","break-range"],max_completions_reached="0",time={wallclock="0.00029",user="0.00028",system="0.00000"}
+(gdb) 
+&"^done,completion=\"break\",\n"
+&"Undefined command: \"\".  Try \"help\".\n"
+^error,msg="Undefined command: \"\".  Try \"help\"."
+(gdb) 
+&"matches=[\"break\",\"break-range\"],\n"
+&"Undefined command: \"matches\".  Try \"help\".\n"
+^error,msg="Undefined command: \"matches\".  Try \"help\"."
+(gdb) 
+&"max_completions_reached=\"114\"\n"
+&"Undefined command: \"max_completions_reached\".  Try \"help\".\n"
+^error,msg="Undefined command: \"max_completions_reached\".  Try \"help\"."
+(gdb) 
+172^error,msg="No registers."
+(gdb) 
+173^done,threads=[],time={wallclock="0.00004",user="0.00003",system="0.00001"}
+(gdb) 
+174^done,BreakpointTable={nr_rows="3",nr_cols="6",hdr=[{width="7",alignment="-1",col_name="number",colhdr="Num"},{width="14",alignment="-1",col_name="type",colhdr="Type"},{width="4",alignment="-1",col_name="disp",colhdr="Disp"},{width="3",alignment="-1",col_name="enabled",colhdr="Enb"},{width="10",alignment="-1",col_name="addr",colhdr="Address"},{width="40",alignment="2",col_name="what",colhdr="What"}],body=[bkpt={number="1",type="catchpoint",disp="keep",enabled="y",what="exit, fork, waitpid, execve, wait4, clone, vfork, exit_group, waitid, unshare",catch-type="syscall",thread-groups=["i1"],times="0"},bkpt={number="2",type="catchpoint",disp="keep",enabled="y",what="exit, fork, waitpid, execve, wait4, clone, vfork, exit_group, waitid, unshare, wait4",catch-type="syscall",thread-groups=["i1"],times="0"},bkpt={number="3",type="breakpoint",disp="keep",enabled="y",addr="<PENDING>",pending="off",times="0",script={"silent","print \"$x is %d\\n\", $x","cont"},original-location="off"}]},time={wallclock="0.00042",user="0.00029",system="0.00014"}
+(gdb) 
+^done,completion="break",matches=["break","break-range"],max_completions_reached="0",time={wallclock="0.00017",user="0.00011",system="0.00005"}
+(gdb) 
+&"^done,completion=\"break\",\n"
+&"Undefined command: \"\".  Try \"help\".\n"
+^error,msg="Undefined command: \"\".  Try \"help\"."
+(gdb) 
+&"matches=[\"break\",\"break-range\"],\n"
+&"Undefined command: \"matches\".  Try \"help\".\n"
+^error,msg="Undefined command: \"matches\".  Try \"help\"."
+(gdb) 
+&"max_completions_reached=\"114\"\n"
+&"Undefined command: \"max_completions_reached\".  Try \"help\".\n"
+^error,msg="Undefined command: \"max_completions_reached\".  Try \"help\"."
+(gdb) 
+175^error,msg="No registers."
+(gdb) 
+176^done,threads=[],time={wallclock="0.00009",user="0.00003",system="0.00002"}
+(gdb) 
+177^done,BreakpointTable={nr_rows="3",nr_cols="6",hdr=[{width="7",alignment="-1",col_name="number",colhdr="Num"},{width="14",alignment="-1",col_name="type",colhdr="Type"},{width="4",alignment="-1",col_name="disp",colhdr="Disp"},{width="3",alignment="-1",col_name="enabled",colhdr="Enb"},{width="10",alignment="-1",col_name="addr",colhdr="Address"},{width="40",alignment="2",col_name="what",colhdr="What"}],body=[bkpt={number="1",type="catchpoint",disp="keep",enabled="y",what="exit, fork, waitpid, execve, wait4, clone, vfork, exit_group, waitid, unshare",catch-type="syscall",thread-groups=["i1"],times="0"},bkpt={number="2",type="catchpoint",disp="keep",enabled="y",what="exit, fork, waitpid, execve, wait4, clone, vfork, exit_group, waitid, unshare, wait4",catch-type="syscall",thread-groups=["i1"],times="0"},bkpt={number="3",type="breakpoint",disp="keep",enabled="y",addr="<PENDING>",pending="off",times="0",script={"silent","print \"$x is %d\\n\", $x","cont"},original-location="off"}]},time={wallclock="0.00012",user="0.00008",system="0.00004"}
+(gdb) 
+~"List of classes of commands:\n\n"
+~"aliases -- User-defined aliases of other commands.\n"
+~"breakpoints -- Making program stop at certain points.\n"
+~"data -- Examining data.\n"
+~"files -- Specifying and examining files.\n"
+~"internals -- Maintenance commands.\n"
+~"obscure -- Obscure features.\n"
+~"running -- Running the program.\n"
+~"stack -- Examining the stack.\n"
+~"status -- Status inquiries.\n"
+~"support -- Support facilities.\n"
+~"text-user-interface -- TUI is the GDB text based interface.\n"
+~"tracepoints -- Tracing of program execution without stopping the program.\n"
+~"user-defined -- User-defined commands.\n"
+~"\nType \"help"
+~"\" followed by a class name for a list of commands in that class.\nType \"help all\" for the list of all commands."
+~"\nType \"help"
+~"\" followed by command name for full documentation.\n"
+~"Type \"apropos word\" to search for commands related to \"word\".\n"
+~"Type \"apropos -v word\" for full documentation of commands related to \"word\".\n"
+~"Command name abbreviations are allowed if unambiguous.\n"
+^done,time={wallclock="0.00156",user="0.00106",system="0.00050"}
+(gdb) 
+178^error,msg="No registers."
+(gdb) 
+179^done,threads=[],time={wallclock="0.00004",user="0.00003",system="0.00001"}
+(gdb) 
+180^done,BreakpointTable={nr_rows="3",nr_cols="6",hdr=[{width="7",alignment="-1",col_name="number",colhdr="Num"},{width="14",alignment="-1",col_name="type",colhdr="Type"},{width="4",alignment="-1",col_name="disp",colhdr="Disp"},{width="3",alignment="-1",col_name="enabled",colhdr="Enb"},{width="10",alignment="-1",col_name="addr",colhdr="Address"},{width="40",alignment="2",col_name="what",colhdr="What"}],body=[bkpt={number="1",type="catchpoint",disp="keep",enabled="y",what="exit, fork, waitpid, execve, wait4, clone, vfork, exit_group, waitid, unshare",catch-type="syscall",thread-groups=["i1"],times="0"},bkpt={number="2",type="catchpoint",disp="keep",enabled="y",what="exit, fork, waitpid, execve, wait4, clone, vfork, exit_group, waitid, unshare, wait4",catch-type="syscall",thread-groups=["i1"],times="0"},bkpt={number="3",type="breakpoint",disp="keep",enabled="y",addr="<PENDING>",pending="off",times="0",script={"silent","print \"$x is %d\\n\", $x","cont"},original-location="off"}]},time={wallclock="0.00036",user="0.00024",system="0.00011"}
+(gdb) 
+~"List of classes of commands:\n\n"
+~"aliases -- User-defined aliases of other commands.\n"
+~"breakpoints -- Making program stop at certain points.\n"
+~"data -- Examining data.\n"
+~"files -- Specifying and examining files.\n"
+~"internals -- Maintenance commands.\n"
+~"obscure -- Obscure features.\n"
+~"running -- Running the program.\n"
+~"stack -- Examining the stack.\n"
+~"status -- Status inquiries.\n"
+~"support -- Support facilities.\n"
+~"text-user-interface -- TUI is the GDB text based interface.\n"
+~"tracepoints -- Tracing of program execution without stopping the program.\n"
+~"user-defined -- User-defined commands.\n"
+~"\nType \"help"
+~"\" followed by a class name for a list of commands in that class.\nType \"help all\" for the list of all commands."
+~"\nType \"help"
+~"\" followed by command name for full documentation.\n"
+~"Type \"apropos word\" to search for commands related to \"word\".\n"
+~"Type \"apropos -v word\" for full documentation of commands related to \"word\".\n"
+~"Command name abbreviations are allowed if unambiguous.\n"
+^done,time={wallclock="0.00175",user="0.00175",system="0.00000"}
+(gdb) 
+181^error,msg="No registers."
+(gdb) 
+182^done,threads=[],time={wallclock="0.00002",user="0.00002",system="0.00000"}
+(gdb) 
+183^done,BreakpointTable={nr_rows="3",nr_cols="6",hdr=[{width="7",alignment="-1",col_name="number",colhdr="Num"},{width="14",alignment="-1",col_name="type",colhdr="Type"},{width="4",alignment="-1",col_name="disp",colhdr="Disp"},{width="3",alignment="-1",col_name="enabled",colhdr="Enb"},{width="10",alignment="-1",col_name="addr",colhdr="Address"},{width="40",alignment="2",col_name="what",colhdr="What"}],body=[bkpt={number="1",type="catchpoint",disp="keep",enabled="y",what="exit, fork, waitpid, execve, wait4, clone, vfork, exit_group, waitid, unshare",catch-type="syscall",thread-groups=["i1"],times="0"},bkpt={number="2",type="catchpoint",disp="keep",enabled="y",what="exit, fork, waitpid, execve, wait4, clone, vfork, exit_group, waitid, unshare, wait4",catch-type="syscall",thread-groups=["i1"],times="0"},bkpt={number="3",type="breakpoint",disp="keep",enabled="y",addr="<PENDING>",pending="off",times="0",script={"silent","print \"$x is %d\\n\", $x","cont"},original-location="off"}]},time={wallclock="0.00017",user="0.00017",system="0.00000"}
+(gdb) 
+~"List of classes of commands:\n\n"
+~"aliases -- User-defined aliases of other commands.\n"
+~"breakpoints -- Making program stop at certain points.\n"
+~"data -- Examining data.\n"
+~"files -- Specifying and examining files.\n"
+~"internals -- Maintenance commands.\n"
+~"obscure -- Obscure features.\n"
+~"running -- Running the program.\n"
+~"stack -- Examining the stack.\n"
+~"status -- Status inquiries.\n"
+~"support -- Support facilities.\n"
+~"text-user-interface -- TUI is the GDB text based interface.\n"
+~"tracepoints -- Tracing of program execution without stopping the program.\n"
+~"user-defined -- User-defined commands.\n"
+~"\nType \"help"
+~"\" followed by a class name for a list of commands in that class.\nType \"help all\" for the list of all commands."
+~"\nType \"help"
+~"\" followed by command name for full documentation.\n"
+~"Type \"apropos word\" to search for commands related to \"word\".\n"
+~"Type \"apropos -v word\" for full documentation of commands related to \"word\".\n"
+~"Command name abbreviations are allowed if unambiguous.\n"
+^done,time={wallclock="0.00103",user="0.00103",system="0.00000"}
+(gdb) 
+184^error,msg="No registers."
+(gdb) 
+185^done,threads=[],time={wallclock="0.00002",user="0.00002",system="0.00000"}
+(gdb) 
+186^done,BreakpointTable={nr_rows="3",nr_cols="6",hdr=[{width="7",alignment="-1",col_name="number",colhdr="Num"},{width="14",alignment="-1",col_name="type",colhdr="Type"},{width="4",alignment="-1",col_name="disp",colhdr="Disp"},{width="3",alignment="-1",col_name="enabled",colhdr="Enb"},{width="10",alignment="-1",col_name="addr",colhdr="Address"},{width="40",alignment="2",col_name="what",colhdr="What"}],body=[bkpt={number="1",type="catchpoint",disp="keep",enabled="y",what="exit, fork, waitpid, execve, wait4, clone, vfork, exit_group, waitid, unshare",catch-type="syscall",thread-groups=["i1"],times="0"},bkpt={number="2",type="catchpoint",disp="keep",enabled="y",what="exit, fork, waitpid, execve, wait4, clone, vfork, exit_group, waitid, unshare, wait4",catch-type="syscall",thread-groups=["i1"],times="0"},bkpt={number="3",type="breakpoint",disp="keep",enabled="y",addr="<PENDING>",pending="off",times="0",script={"silent","print \"$x is %d\\n\", $x","cont"},original-location="off"}]},time={wallclock="0.00024",user="0.00024",system="0.00000"}
+(gdb) 
+&"Undefined command: \"-complete\".  Try \"help\".\n"
+^error,msg="Undefined command: \"-complete\".  Try \"help\"."
+(gdb) 
+187^error,msg="No registers."
+(gdb) 
+188^done,threads=[],time={wallclock="0.00007",user="0.00006",system="0.00000"}
+(gdb) 
+189^done,BreakpointTable={nr_rows="3",nr_cols="6",hdr=[{width="7",alignment="-1",col_name="number",colhdr="Num"},{width="14",alignment="-1",col_name="type",colhdr="Type"},{width="4",alignment="-1",col_name="disp",colhdr="Disp"},{width="3",alignment="-1",col_name="enabled",colhdr="Enb"},{width="10",alignment="-1",col_name="addr",colhdr="Address"},{width="40",alignment="2",col_name="what",colhdr="What"}],body=[bkpt={number="1",type="catchpoint",disp="keep",enabled="y",what="exit, fork, waitpid, execve, wait4, clone, vfork, exit_group, waitid, unshare",catch-type="syscall",thread-groups=["i1"],times="0"},bkpt={number="2",type="catchpoint",disp="keep",enabled="y",what="exit, fork, waitpid, execve, wait4, clone, vfork, exit_group, waitid, unshare, wait4",catch-type="syscall",thread-groups=["i1"],times="0"},bkpt={number="3",type="breakpoint",disp="keep",enabled="y",addr="<PENDING>",pending="off",times="0",script={"silent","print \"$x is %d\\n\", $x","cont"},original-location="off"}]},time={wallclock="0.00020",user="0.00020",system="0.00000"}
+(gdb) 
+^done,matches=[],max_completions_reached="0",time={wallclock="0.00018",user="0.00017",system="0.00000"}
+(gdb) 
+&"^done,completion=\"b push_back(\",\n"
+&"Undefined command: \"\".  Try \"help\".\n"
+^error,msg="Undefined command: \"\".  Try \"help\"."
+(gdb) 
+&"matches=[\n"
+&"Undefined command: \"matches\".  Try \"help\".\n"
+^error,msg="Undefined command: \"matches\".  Try \"help\"."
+(gdb) 
+&"\"b A::push_back(void*)\",\n"
+&"Undefined command: \"\".  Try \"help\".\n"
+^error,msg="Undefined command: \"\".  Try \"help\"."
+(gdb) 
+&"\"b std::string::push_back(char)\",\n"
+&"Undefined command: \"\".  Try \"help\".\n"
+^error,msg="Undefined command: \"\".  Try \"help\"."
+(gdb) 
+&"\"b std::vector<int, std::allocator<int> >::push_back(int&&)\"],\n"
+&"Undefined command: \"\".  Try \"help\".\n"
+^error,msg="Undefined command: \"\".  Try \"help\"."
+(gdb) 
+&"max_completions_reached=\"114\"\n"
+&"Undefined command: \"max_completions_reached\".  Try \"help\".\n"
+^error,msg="Undefined command: \"max_completions_reached\".  Try \"help\"."
+(gdb) 
+190^error,msg="No registers."
+(gdb) 
+191^done,threads=[],time={wallclock="0.00008",user="0.00006",system="0.00003"}
+(gdb) 
+192^done,BreakpointTable={nr_rows="3",nr_cols="6",hdr=[{width="7",alignment="-1",col_name="number",colhdr="Num"},{width="14",alignment="-1",col_name="type",colhdr="Type"},{width="4",alignment="-1",col_name="disp",colhdr="Disp"},{width="3",alignment="-1",col_name="enabled",colhdr="Enb"},{width="10",alignment="-1",col_name="addr",colhdr="Address"},{width="40",alignment="2",col_name="what",colhdr="What"}],body=[bkpt={number="1",type="catchpoint",disp="keep",enabled="y",what="exit, fork, waitpid, execve, wait4, clone, vfork, exit_group, waitid, unshare",catch-type="syscall",thread-groups=["i1"],times="0"},bkpt={number="2",type="catchpoint",disp="keep",enabled="y",what="exit, fork, waitpid, execve, wait4, clone, vfork, exit_group, waitid, unshare, wait4",catch-type="syscall",thread-groups=["i1"],times="0"},bkpt={number="3",type="breakpoint",disp="keep",enabled="y",addr="<PENDING>",pending="off",times="0",script={"silent","print \"$x is %d\\n\", $x","cont"},original-location="off"}]},time={wallclock="0.00022",user="0.00015",system="0.00007"}
+(gdb) 
+~"List of classes of commands:\n\n"
+~"aliases -- User-defined aliases of other commands.\n"
+~"breakpoints -- Making program stop at certain points.\n"
+~"data -- Examining data.\n"
+~"files -- Specifying and examining files.\n"
+~"internals -- Maintenance commands.\n"
+~"obscure -- Obscure features.\n"
+~"running -- Running the program.\n"
+~"stack -- Examining the stack.\n"
+~"status -- Status inquiries.\n"
+~"support -- Support facilities.\n"
+~"text-user-interface -- TUI is the GDB text based interface.\n"
+~"tracepoints -- Tracing of program execution without stopping the program.\n"
+~"user-defined -- User-defined commands.\n"
+~"\nType \"help"
+~"\" followed by a class name for a list of commands in that class.\nType \"help all\" for the list of all commands."
+~"\nType \"help"
+~"\" followed by command name for full documentation.\n"
+~"Type \"apropos word\" to search for commands related to \"word\".\n"
+~"Type \"apropos -v word\" for full documentation of commands related to \"word\".\n"
+~"Command name abbreviations are allowed if unambiguous.\n"
+^done,time={wallclock="0.00084",user="0.00058",system="0.00026"}
+(gdb) 
+193^error,msg="No registers."
+(gdb) 
+194^done,threads=[],time={wallclock="0.00005",user="0.00003",system="0.00002"}
+(gdb) 
+195^done,BreakpointTable={nr_rows="3",nr_cols="6",hdr=[{width="7",alignment="-1",col_name="number",colhdr="Num"},{width="14",alignment="-1",col_name="type",colhdr="Type"},{width="4",alignment="-1",col_name="disp",colhdr="Disp"},{width="3",alignment="-1",col_name="enabled",colhdr="Enb"},{width="10",alignment="-1",col_name="addr",colhdr="Address"},{width="40",alignment="2",col_name="what",colhdr="What"}],body=[bkpt={number="1",type="catchpoint",disp="keep",enabled="y",what="exit, fork, waitpid, execve, wait4, clone, vfork, exit_group, waitid, unshare",catch-type="syscall",thread-groups=["i1"],times="0"},bkpt={number="2",type="catchpoint",disp="keep",enabled="y",what="exit, fork, waitpid, execve, wait4, clone, vfork, exit_group, waitid, unshare, wait4",catch-type="syscall",thread-groups=["i1"],times="0"},bkpt={number="3",type="breakpoint",disp="keep",enabled="y",addr="<PENDING>",pending="off",times="0",script={"silent","print \"$x is %d\\n\", $x","cont"},original-location="off"}]},time={wallclock="0.00058",user="0.00040",system="0.00018"}
+(gdb) 
+^done,matches=[],max_completions_reached="0",time={wallclock="0.00014",user="0.00014",system="0.00000"}
+(gdb) 
+&"^done,matches=[],max_completions_reached=\"0\"\n"
+&"Undefined command: \"\".  Try \"help\".\n"
+^error,msg="Undefined command: \"\".  Try \"help\"."
+(gdb) 
+196^error,msg="No registers."
+(gdb) 
+197^done,threads=[],time={wallclock="0.00009",user="0.00009",system="0.00000"}
+(gdb) 
+198^done,BreakpointTable={nr_rows="3",nr_cols="6",hdr=[{width="7",alignment="-1",col_name="number",colhdr="Num"},{width="14",alignment="-1",col_name="type",colhdr="Type"},{width="4",alignment="-1",col_name="disp",colhdr="Disp"},{width="3",alignment="-1",col_name="enabled",colhdr="Enb"},{width="10",alignment="-1",col_name="addr",colhdr="Address"},{width="40",alignment="2",col_name="what",colhdr="What"}],body=[bkpt={number="1",type="catchpoint",disp="keep",enabled="y",what="exit, fork, waitpid, execve, wait4, clone, vfork, exit_group, waitid, unshare",catch-type="syscall",thread-groups=["i1"],times="0"},bkpt={number="2",type="catchpoint",disp="keep",enabled="y",what="exit, fork, waitpid, execve, wait4, clone, vfork, exit_group, waitid, unshare, wait4",catch-type="syscall",thread-groups=["i1"],times="0"},bkpt={number="3",type="breakpoint",disp="keep",enabled="y",addr="<PENDING>",pending="off",times="0",script={"silent","print \"$x is %d\\n\", $x","cont"},original-location="off"}]},time={wallclock="0.00014",user="0.00014",system="0.00000"}
+(gdb) 
+~"List of classes of commands:\n\n"
+~"aliases -- User-defined aliases of other commands.\n"
+~"breakpoints -- Making program stop at certain points.\n"
+~"data -- Examining data.\n"
+~"files -- Specifying and examining files.\n"
+~"internals -- Maintenance commands.\n"
+~"obscure -- Obscure features.\n"
+~"running -- Running the program.\n"
+~"stack -- Examining the stack.\n"
+~"status -- Status inquiries.\n"
+~"support -- Support facilities.\n"
+~"text-user-interface -- TUI is the GDB text based interface.\n"
+~"tracepoints -- Tracing of program execution without stopping the program.\n"
+~"user-defined -- User-defined commands.\n"
+~"\nType \"help"
+~"\" followed by a class name for a list of commands in that class.\nType \"help all\" for the list of all commands."
+~"\nType \"help"
+~"\" followed by command name for full documentation.\n"
+~"Type \"apropos word\" to search for commands related to \"word\".\n"
+~"Type \"apropos -v word\" for full documentation of commands related to \"word\".\n"
+~"Command name abbreviations are allowed if unambiguous.\n"
+^done,time={wallclock="0.00148",user="0.00148",system="0.00000"}
+(gdb) 
+199^error,msg="No registers."
+(gdb) 
+200^done,threads=[],time={wallclock="0.00002",user="0.00001",system="0.00001"}
+(gdb) 
+201^done,BreakpointTable={nr_rows="3",nr_cols="6",hdr=[{width="7",alignment="-1",col_name="number",colhdr="Num"},{width="14",alignment="-1",col_name="type",colhdr="Type"},{width="4",alignment="-1",col_name="disp",colhdr="Disp"},{width="3",alignment="-1",col_name="enabled",colhdr="Enb"},{width="10",alignment="-1",col_name="addr",colhdr="Address"},{width="40",alignment="2",col_name="what",colhdr="What"}],body=[bkpt={number="1",type="catchpoint",disp="keep",enabled="y",what="exit, fork, waitpid, execve, wait4, clone, vfork, exit_group, waitid, unshare",catch-type="syscall",thread-groups=["i1"],times="0"},bkpt={number="2",type="catchpoint",disp="keep",enabled="y",what="exit, fork, waitpid, execve, wait4, clone, vfork, exit_group, waitid, unshare, wait4",catch-type="syscall",thread-groups=["i1"],times="0"},bkpt={number="3",type="breakpoint",disp="keep",enabled="y",addr="<PENDING>",pending="off",times="0",script={"silent","print \"$x is %d\\n\", $x","cont"},original-location="off"}]},time={wallclock="0.00012",user="0.00009",system="0.00004"}
+(gdb) 
+~"List of classes of commands:\n\n"
+~"aliases -- User-defined aliases of other commands.\n"
+~"breakpoints -- Making program stop at certain points.\n"
+~"data -- Examining data.\n"
+~"files -- Specifying and examining files.\n"
+~"internals -- Maintenance commands.\n"
+~"obscure -- Obscure features.\n"
+~"running -- Running the program.\n"
+~"stack -- Examining the stack.\n"
+~"status -- Status inquiries.\n"
+~"support -- Support facilities.\n"
+~"text-user-interface -- TUI is the GDB text based interface.\n"
+~"tracepoints -- Tracing of program execution without stopping the program.\n"
+~"user-defined -- User-defined commands.\n"
+~"\nType \"help"
+~"\" followed by a class name for a list of commands in that class.\nType \"help all\" for the list of all commands."
+~"\nType \"help"
+~"\" followed by command name for full documentation.\n"
+~"Type \"apropos word\" to search for commands related to \"word\".\n"
+~"Type \"apropos -v word\" for full documentation of commands related to \"word\".\n"
+~"Command name abbreviations are allowed if unambiguous.\n"
+^done,time={wallclock="0.00163",user="0.00113",system="0.00050"}
+(gdb) 
+202^error,msg="No registers."
+(gdb) 
+203^done,threads=[],time={wallclock="0.00002",user="0.00001",system="0.00001"}
+(gdb) 
+204^done,BreakpointTable={nr_rows="3",nr_cols="6",hdr=[{width="7",alignment="-1",col_name="number",colhdr="Num"},{width="14",alignment="-1",col_name="type",colhdr="Type"},{width="4",alignment="-1",col_name="disp",colhdr="Disp"},{width="3",alignment="-1",col_name="enabled",colhdr="Enb"},{width="10",alignment="-1",col_name="addr",colhdr="Address"},{width="40",alignment="2",col_name="what",colhdr="What"}],body=[bkpt={number="1",type="catchpoint",disp="keep",enabled="y",what="exit, fork, waitpid, execve, wait4, clone, vfork, exit_group, waitid, unshare",catch-type="syscall",thread-groups=["i1"],times="0"},bkpt={number="2",type="catchpoint",disp="keep",enabled="y",what="exit, fork, waitpid, execve, wait4, clone, vfork, exit_group, waitid, unshare, wait4",catch-type="syscall",thread-groups=["i1"],times="0"},bkpt={number="3",type="breakpoint",disp="keep",enabled="y",addr="<PENDING>",pending="off",times="0",script={"silent","print \"$x is %d\\n\", $x","cont"},original-location="off"}]},time={wallclock="0.00012",user="0.00008",system="0.00004"}
+(gdb) 
+&"No symbol table is loaded.  Use the \"file\" command.\n"
+^error,msg="No symbol table is loaded.  Use the \"file\" command."
+(gdb) 
+205^error,msg="No registers."
+(gdb) 
+206^done,threads=[],time={wallclock="0.00006",user="0.00004",system="0.00002"}
+(gdb) 
+207^done,BreakpointTable={nr_rows="3",nr_cols="6",hdr=[{width="7",alignment="-1",col_name="number",colhdr="Num"},{width="14",alignment="-1",col_name="type",colhdr="Type"},{width="4",alignment="-1",col_name="disp",colhdr="Disp"},{width="3",alignment="-1",col_name="enabled",colhdr="Enb"},{width="10",alignment="-1",col_name="addr",colhdr="Address"},{width="40",alignment="2",col_name="what",colhdr="What"}],body=[bkpt={number="1",type="catchpoint",disp="keep",enabled="y",what="exit, fork, waitpid, execve, wait4, clone, vfork, exit_group, waitid, unshare",catch-type="syscall",thread-groups=["i1"],times="0"},bkpt={number="2",type="catchpoint",disp="keep",enabled="y",what="exit, fork, waitpid, execve, wait4, clone, vfork, exit_group, waitid, unshare, wait4",catch-type="syscall",thread-groups=["i1"],times="0"},bkpt={number="3",type="breakpoint",disp="keep",enabled="y",addr="<PENDING>",pending="off",times="0",script={"silent","print \"$x is %d\\n\", $x","cont"},original-location="off"}]},time={wallclock="0.00024",user="0.00016",system="0.00007"}
+(gdb) 
